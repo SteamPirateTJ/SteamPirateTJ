@@ -4,160 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SteamPirateTJ | Nuclear Steam-Punk Pirate</title>
-  <meta name="description" content="Official website of SteamPirateTJ – Nuclear Steam-Punk Pirate VTuber / PNGtuber. Merch, fan art, streams & more." />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Cinzel:wght@600&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ===== NAVIGATION ===== -->
+  <!-- NAV -->
   <nav class="navbar">
-    <div class="logo">SteamPirateTJ</div>
+    <a href="index.html" class="logo">SteamPirateTJ</a>
     <div class="nav-links">
-      <a href="#merch">Merch</a>
-      <a href="#gallery">Art</a>
-      <a href="#stream">Stream</a>
-      <a href="#creators">Allies</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="merch.html">Merch</a>
+      <a href="gallery.html">Art</a>
+      <a href="stream.html">Stream</a>
+      <a href="creators.html">Allies</a>
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
       <h1>SteamPirateTJ</h1>
       <p class="tagline">Nuclear Steam-Punk Pirate • VTuber / PNGtuber</p>
 
-      <!-- Social Icons (clickable) -->
       <div class="social-icons">
         <a href="https://twitch.tv/SteamPirateTJ" target="_blank" title="Twitch"><i class="fab fa-twitch"></i></a>
         <a href="https://x.com/SteamPirateTJ" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
         <a href="https://instagram.com/SteamPirateTJ" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://tiktok.com/@SteamPirateTJ" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
         <a href="https://youtube.com/@SteamPirateTJ" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <!-- Add more later if you want (Discord, etc.) -->
       </div>
     </div>
 
-    <!-- Pure CSS animated gears (no images needed) -->
     <div class="gear gear-1"></div>
     <div class="gear gear-2"></div>
     <div class="gear gear-3"></div>
   </header>
 
-  <!-- ===== MERCH ===== -->
-  <section id="merch" class="section">
-    <h2>Merch</h2>
-    <p class="section-desc">Support the pirate crew – real goods coming soon</p>
-
-    <div class="card-grid">
-      <!-- Placeholder cards – replace later with real images & links -->
-      <div class="card">
-        <div class="card-image placeholder">T-Shirt</div>
-        <h3>Atomic Jolly Roger Tee</h3>
-        <p>Coming soon</p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
-      <div class="card">
-        <div class="card-image placeholder">Mug</div>
-        <h3>Cherenkov Coffee Mug</h3>
-        <p>Coming soon</p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
-      <div class="card">
-        <div class="card-image placeholder">Poster</div>
-        <h3>Steam-Punk Portrait</h3>
-        <p>Coming soon</p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ART GALLERY ===== -->
-  <section id="gallery" class="section">
-    <h2>Art Gallery</h2>
-    <p class="section-desc">Commissions & Fan Creations</p>
-
-    <div class="card-grid gallery-grid">
-      <!-- Placeholders – just replace the div content with <img> later -->
-      <div class="gallery-item">
-        <div class="card-image placeholder">Commission 1</div>
-      </div>
-      <div class="gallery-item">
-        <div class="card-image placeholder">Fan Art 1</div>
-      </div>
-      <div class="gallery-item">
-        <div class="card-image placeholder">Commission 2</div>
-      </div>
-      <div class="gallery-item">
-        <div class="card-image placeholder">Fan Art 2</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TWITCH ===== -->
-  <section id="stream" class="section">
-    <h2>Live Stream</h2>
-    <p class="section-desc">Watch & chat right here</p>
-
-    <div class="twitch-container">
-      <!-- Player -->
-      <div class="twitch-player">
-        <iframe
-          src="https://player.twitch.tv/?channel=SteamPirateTJ&parent=localhost&parent=steampirate-tj.github.io"
-          height="100%"
-          width="100%"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-- Chat -->
-      <div class="twitch-chat">
-        <iframe
-          src="https://www.twitch.tv/embed/SteamPirateTJ/chat?parent=localhost&parent=steampirate-tj.github.io"
-          height="100%"
-          width="100%">
-        </iframe>
-      </div>
-    </div>
-    <p class="note">When offline you’ll see the offline screen. Replace the two parent= values with your real domain later.</p>
-  </section>
-
-  <!-- ===== CREATORS I LIKE ===== -->
-  <section id="creators" class="section">
-    <h2>Allies & Creators I Like</h2>
-    <p class="section-desc">Fellow pirates of the digital seas</p>
-
-    <div class="card-grid">
-      <div class="card creator-card">
-        <div class="card-image placeholder">Creator 1</div>
-        <h3>Creator Name</h3>
-        <a href="#" class="btn small">Visit</a>
-      </div>
-      <div class="card creator-card">
-        <div class="card-image placeholder">Creator 2</div>
-        <h3>Creator Name</h3>
-        <a href="#" class="btn small">Visit</a>
-      </div>
-      <div class="card creator-card">
-        <div class="card-image placeholder">Creator 3</div>
-        <h3>Creator Name</h3>
-        <a href="#" class="btn small">Visit</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
   <footer>
     <p>© 2026 SteamPirateTJ • Nuclear Steam-Punk Pirate</p>
-    <p>Built with gears, steam & a little Cherenkov radiation</p>
+    <p>Built with gears, steam & Cherenkov radiation</p>
   </footer>
 
   <script src="script.js"></script>
