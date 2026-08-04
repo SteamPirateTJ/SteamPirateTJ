@@ -276,3 +276,36 @@ footer {
   .twitch-player { height: 280px; }
   .twitch-chat { height: 400px; }
 }
+
+/* Creator cards – social icons */
+.creator-card {
+  text-align: center;
+  padding-bottom: 1.2rem;
+}
+
+.creator-desc {
+  padding: 0 1rem 1rem;
+  color: #aaa;
+  font-size: 0.9rem;
+  min-height: 2.8em;
+}
+
+.creator-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 0.8rem;
+}
+
+.creator-socials a {
+  font-size: 1.4rem;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.creator-socials a:hover {
+  color: var(--cherenkov);
+  transform: scale(1.25);
+  text-shadow: 0 0 12px var(--cherenkov);
+}
