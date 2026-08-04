@@ -145,7 +145,7 @@ h1, h2, .logo {
 /* PAGE SECTIONS */
 .page-section {
   padding: 5rem 2rem;
-  max-width: 1200px;
+  max-width: 1400px;          /* wider so more cards fit side-by-side */
   margin: 0 auto;
   flex: 1;
 }
@@ -164,11 +164,12 @@ h1, h2, .logo {
   margin-bottom: 3rem;
 }
 
-/* Cards */
+/* ===== MAIN GRID – this stops the straight line ===== */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.5rem;
+  justify-content: center;
 }
 
 .card {
@@ -185,7 +186,6 @@ h1, h2, .logo {
   transform: translateY(-8px);
 }
 
-/* This now works for both placeholders AND real photos */
 .card-image {
   width: 100%;
   height: 180px;
@@ -196,7 +196,7 @@ h1, h2, .logo {
   font-size: 1.2rem;
   color: #666;
   text-align: center;
-  line-height: 180px; /* only affects placeholder text */
+  line-height: 180px;
 }
 
 .card h3 {
@@ -286,32 +286,32 @@ footer {
 /* ====================== */
 .creator-card {
   text-align: center;
-  padding-bottom: 1.2rem;
+  padding-bottom: 1.5rem;
 }
 
 .creator-desc {
-  padding: 0 1rem 1rem;
+  padding: 0 1rem 1.2rem;
   color: #aaa;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   min-height: 2.8em;
 }
 
 .creator-socials {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.3rem;
   flex-wrap: wrap;
-  padding: 0 0.8rem;
+  padding: 0 1rem;
 }
 
 .creator-socials a {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: var(--text);
   transition: all 0.3s ease;
 }
 
 .creator-socials a:hover {
-  color: var(--cherenkov);
-  transform: scale(1.25);
-  text-shadow: 0 0 12px var(--cherenkov);
+  color: var(--creator-color, var(--cherenkov));
+  transform: scale(1.3);
+  text-shadow: 0 0 14px var(--creator-color, var(--cherenkov));
 }
