@@ -31,7 +31,7 @@ body {
 h1, h2, .logo {
   font-family: 'Pirata One', cursive;
   letter-spacing: 1px;
-  font-weight: normal; /* Pirata One looks best without bold */
+  font-weight: normal;
 }
 
 /* NAV */
@@ -78,7 +78,7 @@ h1, h2, .logo {
   background: var(--cherenkov);
 }
 
-/* HERO (only on home) */
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -185,14 +185,18 @@ h1, h2, .logo {
   transform: translateY(-8px);
 }
 
+/* This now works for both placeholders AND real photos */
 .card-image {
+  width: 100%;
   height: 180px;
   background: #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  object-fit: cover;
+  object-position: center;
   font-size: 1.2rem;
   color: #666;
+  text-align: center;
+  line-height: 180px; /* only affects placeholder text */
 }
 
 .card h3 {
@@ -277,7 +281,9 @@ footer {
   .twitch-chat { height: 400px; }
 }
 
-/* Creator cards – social icons */
+/* ====================== */
+/* Creator cards styling  */
+/* ====================== */
 .creator-card {
   text-align: center;
   padding-bottom: 1.2rem;
