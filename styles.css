@@ -186,7 +186,7 @@ h1, h2, .logo {
 
 .card {
   background: var(--card-bg);
-  border: 3px solid #333;          /* ← thicker border */
+  border: 3px solid #333;
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s;
@@ -194,7 +194,7 @@ h1, h2, .logo {
 
 .card:hover {
   border-color: var(--creator-color, var(--cherenkov));
-  box-shadow: 0 0 28px color-mix(in srgb, var(--creator-color, var(--cherenkov)) 55%, transparent);  /* ← stronger glow */
+  box-shadow: 0 0 28px color-mix(in srgb, var(--creator-color, var(--cherenkov)) 55%, transparent);
   transform: translateY(-8px);
 }
 
@@ -203,6 +203,12 @@ h1, h2, .logo {
   height: 180px;
   background: #222;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .card-image img {
