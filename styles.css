@@ -341,7 +341,7 @@ footer {
   text-shadow: 0 0 14px var(--creator-color, var(--cherenkov));
 }
 
-/* Girlfriend / partner page */
+/* Girlfriend / partner page base styles */
 .partner-layout {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -390,4 +390,38 @@ footer {
   .partner-photo img {
     height: 240px;
   }
+}
+
+/* ===== Girlfriend page – #FFC9D7 theme only ===== */
+.girlfriend-page h2 {
+  color: #FFC9D7;
+  text-shadow: 0 0 12px #FFC9D7;
+}
+
+.girlfriend-page .nav-links a.active {
+  color: #FFC9D7;
+}
+
+.girlfriend-page .nav-links a.active::after {
+  background: #FFC9D7;
+}
+
+.girlfriend-page .partner-layout {
+  border-color: #FFC9D7;
+  box-shadow: 0 0 20px rgba(255, 201, 215, 0.3);
+}
+
+.girlfriend-page .partner-photo img,
+.girlfriend-page .partner-photo .card-image {
+  border-color: #FFC9D7;
+  box-shadow: 0 0 12px rgba(255, 201, 215, 0.35);
+}
+
+.girlfriend-page .partner-info h3 {
+  color: #FFC9D7;
+  text-shadow: 0 0 10px #FFC9D7;
+}
+
+.girlfriend-page .partner-info p {
+  color: #FFC9D7;
 }
