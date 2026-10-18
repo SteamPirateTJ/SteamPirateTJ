@@ -448,3 +448,70 @@ footer p {
   color: #FFC9D7 !important;
   border-top-color: #FFC9D7;
 }
+/* Subtle hearts on "My Girl" nav hover */
+.nav-links a[href="girlfriend.html"] {
+  position: relative;
+}
+
+.nav-links a[href="girlfriend.html"]:hover::before,
+.nav-links a[href="girlfriend.html"]:hover::after {
+  content: "♥";
+  position: absolute;
+  font-size: 0.9rem;
+  color: #FFC9D7;
+  opacity: 0;
+  pointer-events: none;
+  animation: heartFloat 1.2s ease-out forwards;
+}
+
+.nav-links a[href="girlfriend.html"]:hover::before {
+  left: -12px;
+  bottom: 100%;
+  animation-delay: 0.05s;
+}
+
+.nav-links a[href="girlfriend.html"]:hover::after {
+  right: -12px;
+  bottom: 100%;
+  animation-delay: 0.2s;
+}
+
+@keyframes heartFloat {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(1.1);
+  }
+}
+/* Soft floating hearts only on girlfriend page */
+.girlfriend-page .page-section::before {
+  content: "♥";
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  font-size: 1.4rem;
+  color: #FFC9D7;
+  opacity: 0.15;
+  animation: softHeart 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.girlfriend-page .page-section::after {
+  content: "♥";
+  position: absolute;
+  right: 12%;
+  bottom: 25%;
+  font-size: 1.1rem;
+  color: #FFC9D7;
+  opacity: 0.12;
+  animation: softHeart 8s ease-in-out infinite 1s;
+  pointer-events: none;
+}
+
+@keyframes softHeart {
+  0%, 100% { transform: translateY(0); opacity: 0.12; }
+  50% { transform: translateY(-15px); opacity: 0.25; }
+}
