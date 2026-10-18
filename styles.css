@@ -438,3 +438,12 @@ footer {
 .girlfriend-page .partner-info p {
   color: #FFC9D7 !important;
 }
+
+.girlfriend-page footer {
+  color: #FFC9D7 !important;
+  border-top-color: #FFC9D7;
+}
+
+.girlfriend-page footer p {
+  color: #FFC9D7 !important;
+}
