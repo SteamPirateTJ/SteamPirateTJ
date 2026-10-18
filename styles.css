@@ -394,34 +394,47 @@ footer {
 
 /* ===== Girlfriend page – #FFC9D7 theme only ===== */
 .girlfriend-page h2 {
-  color: #FFC9D7;
+  color: #FFC9D7 !important;
   text-shadow: 0 0 12px #FFC9D7;
 }
 
+.girlfriend-page .logo {
+  color: #FFC9D7 !important;
+  text-shadow: 0 0 10px #FFC9D7;
+}
+
+.girlfriend-page .navbar {
+  border-bottom-color: #FFC9D7 !important;
+}
+
 .girlfriend-page .nav-links a.active {
-  color: #FFC9D7;
+  color: #FFC9D7 !important;
 }
 
 .girlfriend-page .nav-links a.active::after {
-  background: #FFC9D7;
+  background: #FFC9D7 !important;
+}
+
+.girlfriend-page .section-desc {
+  color: #FFC9D7 !important;
 }
 
 .girlfriend-page .partner-layout {
-  border-color: #FFC9D7;
-  box-shadow: 0 0 20px rgba(255, 201, 215, 0.3);
+  border-color: #FFC9D7 !important;
+  box-shadow: 0 0 20px rgba(255, 201, 215, 0.35) !important;
 }
 
 .girlfriend-page .partner-photo img,
 .girlfriend-page .partner-photo .card-image {
-  border-color: #FFC9D7;
-  box-shadow: 0 0 12px rgba(255, 201, 215, 0.35);
+  border-color: #FFC9D7 !important;
+  box-shadow: 0 0 12px rgba(255, 201, 215, 0.4) !important;
 }
 
 .girlfriend-page .partner-info h3 {
-  color: #FFC9D7;
+  color: #FFC9D7 !important;
   text-shadow: 0 0 10px #FFC9D7;
 }
 
 .girlfriend-page .partner-info p {
-  color: #FFC9D7;
+  color: #FFC9D7 !important;
 }
