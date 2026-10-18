@@ -126,28 +126,13 @@ h1, h2, .logo {
   text-shadow: 0 0 15px var(--cherenkov);
 }
 
-/* Gears */
-.gear {
-  position: absolute;
-  border: 8px dashed var(--brass);
-  border-radius: 50%;
-  opacity: 0.15;
-}
-.gear-1 { width: 300px; height: 300px; top: 10%; left: 5%; animation: spin 40s linear infinite; }
-.gear-2 { width: 200px; height: 200px; bottom: 15%; right: 8%; animation: spin 25s linear infinite reverse; }
-.gear-3 { width: 150px; height: 150px; top: 40%; right: 20%; animation: spin 30s linear infinite; }
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 /* PAGE SECTIONS */
 .page-section {
   padding: 5rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
   flex: 1;
+  position: relative;
 }
 
 .section h2 {
@@ -416,6 +401,12 @@ footer p {
 }
 
 .girlfriend-page .nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
   background: #FFC9D7 !important;
 }
 
@@ -448,70 +439,37 @@ footer p {
   color: #FFC9D7 !important;
   border-top-color: #FFC9D7;
 }
-/* Subtle hearts on "My Girl" nav hover */
-.nav-links a[href="girlfriend.html"] {
+
+/* Hearts only on girlfriend page nav link */
+.girl-link {
   position: relative;
 }
 
-.nav-links a[href="girlfriend.html"]:hover::before,
-.nav-links a[href="girlfriend.html"]:hover::after {
-  content: "♥";
+.girl-link .heart {
   position: absolute;
-  font-size: 0.9rem;
   color: #FFC9D7;
   opacity: 0;
   pointer-events: none;
-  animation: heartFloat 1.2s ease-out forwards;
+  font-size: 0.7rem;
 }
 
-.nav-links a[href="girlfriend.html"]:hover::before {
-  left: -12px;
-  bottom: 100%;
-  animation-delay: 0.05s;
+.girl-link:hover .heart {
+  animation: heartFloat 1.4s ease-out forwards;
 }
 
-.nav-links a[href="girlfriend.html"]:hover::after {
-  right: -12px;
-  bottom: 100%;
-  animation-delay: 0.2s;
-}
+.girl-link .h1 { left: -18px; bottom: 100%; font-size: 0.6rem; animation-delay: 0s; }
+.girl-link .h2 { left: -6px;  bottom: 100%; font-size: 1.1rem; animation-delay: 0.1s; }
+.girl-link .h3 { right: -8px; bottom: 100%; font-size: 0.8rem; animation-delay: 0.15s; }
+.girl-link .h4 { right: -20px; bottom: 100%; font-size: 1.3rem; animation-delay: 0.25s; }
+.girl-link .h5 { left: 40%; bottom: 100%; font-size: 0.5rem; animation-delay: 0.05s; }
 
 @keyframes heartFloat {
   0% {
     opacity: 1;
-    transform: translateY(0) scale(0.6);
+    transform: translateY(0) scale(0.5);
   }
   100% {
     opacity: 0;
-    transform: translateY(-28px) scale(1.1);
+    transform: translateY(-35px) scale(1.2);
   }
-}
-/* Soft floating hearts only on girlfriend page */
-.girlfriend-page .page-section::before {
-  content: "♥";
-  position: absolute;
-  left: 10%;
-  top: 20%;
-  font-size: 1.4rem;
-  color: #FFC9D7;
-  opacity: 0.15;
-  animation: softHeart 6s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.girlfriend-page .page-section::after {
-  content: "♥";
-  position: absolute;
-  right: 12%;
-  bottom: 25%;
-  font-size: 1.1rem;
-  color: #FFC9D7;
-  opacity: 0.12;
-  animation: softHeart 8s ease-in-out infinite 1s;
-  pointer-events: none;
-}
-
-@keyframes softHeart {
-  0%, 100% { transform: translateY(0); opacity: 0.12; }
-  50% { transform: translateY(-15px); opacity: 0.25; }
 }
