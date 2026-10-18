@@ -448,3 +448,44 @@ footer p {
   color: #FFC9D7 !important;
   border-top-color: #FFC9D7;
 }
+/* Real interlocking gears */
+.gear-container {
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 280px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gear {
+  position: absolute;
+  transform-origin: center;
+}
+
+.gear-large {
+  width: 180px;
+  height: 180px;
+  top: 0;
+  left: 0;
+  animation: spin-cw 12s linear infinite;
+}
+
+.gear-small {
+  width: 120px;
+  height: 120px;
+  top: 70px;
+  left: 130px;
+  animation: spin-ccw 8s linear infinite;
+}
+
+@keyframes spin-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
