@@ -473,3 +473,81 @@ footer p {
     transform: translateY(-35px) scale(1.2);
   }
 }
+/* Lots of floating hearts on girlfriend page */
+.girlfriend-page .page-section::before,
+.girlfriend-page .page-section::after {
+  content: "♥";
+  position: absolute;
+  color: #FFC9D7;
+  opacity: 0.18;
+  pointer-events: none;
+  animation: ambientHeart 7s ease-in-out infinite;
+}
+
+.girlfriend-page .page-section::before {
+  font-size: 2.2rem;
+  left: 8%;
+  top: 15%;
+  animation-duration: 8s;
+}
+
+.girlfriend-page .page-section::after {
+  font-size: 1.4rem;
+  right: 10%;
+  bottom: 20%;
+  animation-duration: 6.5s;
+  animation-delay: 1.5s;
+}
+
+.girlfriend-page .partner-layout::before,
+.girlfriend-page .partner-layout::after {
+  content: "♥";
+  position: absolute;
+  color: #FFC9D7;
+  opacity: 0.15;
+  pointer-events: none;
+  animation: ambientHeart 9s ease-in-out infinite;
+}
+
+.girlfriend-page .partner-layout::before {
+  font-size: 1.8rem;
+  left: -30px;
+  top: 30%;
+  animation-delay: 0.5s;
+}
+
+.girlfriend-page .partner-layout::after {
+  font-size: 1.1rem;
+  right: -25px;
+  bottom: 25%;
+  animation-delay: 2s;
+}
+
+@keyframes ambientHeart {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+  50% { transform: translateY(-25px) rotate(8deg); opacity: 0.3; }
+}
+
+/* Hearts on hover of her name too */
+.layla-name {
+  position: relative;
+  display: inline-block;
+}
+
+.layla-name .heart {
+  position: absolute;
+  color: #FFC9D7;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.layla-name:hover .heart {
+  animation: heartFloat 1.5s ease-out forwards;
+}
+
+.layla-name .h1 { left: -20px; bottom: 100%; font-size: 0.7rem; animation-delay: 0s; }
+.layla-name .h2 { left: -5px;  bottom: 100%; font-size: 1.2rem; animation-delay: 0.08s; }
+.layla-name .h3 { right: -10px; bottom: 100%; font-size: 0.9rem; animation-delay: 0.12s; }
+.layla-name .h4 { right: -25px; bottom: 100%; font-size: 1.4rem; animation-delay: 0.2s; }
+.layla-name .h5 { left: 30%; bottom: 100%; font-size: 0.6rem; animation-delay: 0.03s; }
+.layla-name .h6 { left: 55%; bottom: 100%; font-size: 1rem; animation-delay: 0.18s; }
