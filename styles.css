@@ -279,14 +279,18 @@ h1, h2, .logo {
   color: #888;
 }
 
-/* Footer */
+/* Footer – colored on all pages */
 footer {
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid #333;
-  color: #666;
+  border-top: 1px solid var(--cherenkov);
+  color: var(--cherenkov);
   font-size: 0.9rem;
   margin-top: auto;
+}
+
+footer p {
+  color: var(--cherenkov);
 }
 
 /* Mobile */
@@ -439,11 +443,8 @@ footer {
   color: #FFC9D7 !important;
 }
 
-.girlfriend-page footer {
-  color: #FFC9D7 !important;
-  border-top-color: #FFC9D7;
-}
-
+.girlfriend-page footer,
 .girlfriend-page footer p {
   color: #FFC9D7 !important;
+  border-top-color: #FFC9D7;
 }
