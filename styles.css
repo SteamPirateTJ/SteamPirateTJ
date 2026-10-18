@@ -448,13 +448,13 @@ footer p {
   color: #FFC9D7 !important;
   border-top-color: #FFC9D7;
 }
-/* Proper interlocking gears */
+/* Steampunk interlocking gears */
 .gear-container {
   position: absolute;
-  top: 12%;
-  right: 6%;
-  width: 340px;
-  height: 240px;
+  top: 10%;
+  right: 4%;
+  width: 420px;
+  height: 280px;
   pointer-events: none;
   z-index: 1;
 }
@@ -462,22 +462,23 @@ footer p {
 .gear {
   position: absolute;
   transform-origin: center;
+  filter: drop-shadow(0 0 8px rgba(184, 134, 11, 0.4));
 }
 
 .gear-large {
-  width: 200px;
-  height: 200px;
+  width: 260px;
+  height: 260px;
   top: 0;
   left: 0;
-  animation: spin-cw 10s linear infinite;
+  animation: spin-cw 14s linear infinite;
 }
 
 .gear-small {
-  width: 140px;
-  height: 140px;
-  top: 85px;
-  left: 155px;
-  animation: spin-ccw 6.5s linear infinite;
+  width: 170px;
+  height: 170px;
+  top: 95px;
+  left: 195px;
+  animation: spin-ccw 9s linear infinite;
 }
 
 @keyframes spin-cw {
