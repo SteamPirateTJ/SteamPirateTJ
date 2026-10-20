@@ -1,5 +1,5 @@
 /* =========================================
-   COLOR VARIABLES – change these anytime
+   COLOR VARIABLES
    ========================================= */
 :root {
   --bg: #0a0a0a;
@@ -11,11 +11,7 @@
   --card-bg: #1a1a1a;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   background: var(--bg);
@@ -64,9 +60,7 @@ h1, h2, .logo {
 }
 
 .nav-links a:hover,
-.nav-links a.active {
-  color: var(--cherenkov);
-}
+.nav-links a.active { color: var(--cherenkov); }
 
 .nav-links a.active::after {
   content: '';
@@ -91,9 +85,7 @@ h1, h2, .logo {
   flex: 1;
 }
 
-.hero-content {
-  z-index: 2;
-}
+.hero-content { z-index: 2; }
 
 .hero h1 {
   font-size: 4rem;
@@ -102,31 +94,17 @@ h1, h2, .logo {
   margin-bottom: 0.5rem;
 }
 
-.tagline {
-  font-size: 1.3rem;
-  color: var(--red);
-  margin-bottom: 2rem;
-}
+.tagline { font-size: 1.3rem; color: var(--red); margin-bottom: 2rem; }
 
-.social-icons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.social-icons a {
-  font-size: 2rem;
-  color: var(--text);
-  transition: all 0.3s;
-}
-
+.social-icons { display: flex; gap: 1.5rem; justify-content: center; }
+.social-icons a { font-size: 2rem; color: var(--text); transition: all 0.3s; }
 .social-icons a:hover {
   color: var(--cherenkov);
   transform: scale(1.3) rotate(10deg);
   text-shadow: 0 0 15px var(--cherenkov);
 }
 
-/* PAGE SECTIONS */
+/* SECTIONS */
 .page-section {
   padding: 5rem 2rem;
   max-width: 1400px;
@@ -143,13 +121,9 @@ h1, h2, .logo {
   text-shadow: 0 0 10px var(--cherenkov);
 }
 
-.section-desc {
-  text-align: center;
-  color: #aaa;
-  margin-bottom: 3rem;
-}
+.section-desc { text-align: center; color: #aaa; margin-bottom: 3rem; }
 
-/* ===== MAIN GRID ===== */
+/* GRID */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -157,17 +131,8 @@ h1, h2, .logo {
   justify-content: center;
 }
 
-@media (min-width: 900px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .card-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+@media (min-width: 900px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .card-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .card {
   background: var(--card-bg);
@@ -204,16 +169,8 @@ h1, h2, .logo {
   display: block;
 }
 
-.card h3 {
-  padding: 1rem 1rem 0.3rem;
-  color: var(--red);
-}
-
-.card p {
-  padding: 0 1rem 1rem;
-  color: #aaa;
-  font-size: 0.95rem;
-}
+.card h3 { padding: 1rem 1rem 0.3rem; color: var(--red); }
+.card p { padding: 0 1rem 1rem; color: #aaa; font-size: 0.95rem; }
 
 .btn {
   display: inline-block;
@@ -232,10 +189,7 @@ h1, h2, .logo {
   box-shadow: 0 0 15px var(--cherenkov);
 }
 
-.btn.small {
-  padding: 0.4rem 1rem;
-  font-size: 0.9rem;
-}
+.btn.small { padding: 0.4rem 1rem; font-size: 0.9rem; }
 
 /* Twitch */
 .twitch-container {
@@ -248,23 +202,12 @@ h1, h2, .logo {
   overflow: hidden;
 }
 
-.twitch-player, .twitch-chat {
-  background: #000;
-}
+.twitch-player, .twitch-chat { background: #000; }
+.twitch-player iframe, .twitch-chat iframe { border: none; }
 
-.twitch-player iframe,
-.twitch-chat iframe {
-  border: none;
-}
+.note { text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #888; }
 
-.note {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-/* Footer – colored on all pages */
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
@@ -274,41 +217,26 @@ footer {
   margin-top: auto;
 }
 
-footer p {
-  color: var(--cherenkov);
-}
+footer p { color: var(--cherenkov); }
 
 /* Mobile */
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.5rem; }
   .nav-links { display: none; }
-  .twitch-container {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
+  .twitch-container { grid-template-columns: 1fr; height: auto; }
   .twitch-player { height: 280px; }
   .twitch-chat { height: 400px; }
 }
 
-/* ====================== */
-/* Creator cards styling  */
-/* ====================== */
+/* Creator cards */
 .creator-card {
   text-align: center;
   padding-bottom: 1.5rem;
   border-color: var(--creator-color, #333);
 }
 
-.creator-card h3 {
-  color: var(--creator-color, var(--red));
-}
-
-.creator-desc {
-  padding: 0 1rem 1.2rem;
-  color: #aaa;
-  font-size: 0.95rem;
-  min-height: 2.8em;
-}
+.creator-card h3 { color: var(--creator-color, var(--red)); }
+.creator-desc { padding: 0 1rem 1.2rem; color: #aaa; font-size: 0.95rem; min-height: 2.8em; }
 
 .creator-socials {
   display: flex;
@@ -318,19 +246,14 @@ footer p {
   padding: 0 1rem;
 }
 
-.creator-socials a {
-  font-size: 1.8rem;
-  color: var(--text);
-  transition: all 0.3s ease;
-}
-
+.creator-socials a { font-size: 1.8rem; color: var(--text); transition: all 0.3s ease; }
 .creator-socials a:hover {
   color: var(--creator-color, var(--cherenkov));
   transform: scale(1.3);
   text-shadow: 0 0 14px var(--creator-color, var(--cherenkov));
 }
 
-/* Girlfriend / partner page base styles */
+/* Partner layout */
 .partner-layout {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -343,6 +266,8 @@ footer p {
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 0 16px rgba(184, 115, 51, 0.18);
+  position: relative;
+  z-index: 1;
 }
 
 .partner-photo .card-image,
@@ -371,17 +296,12 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  .partner-layout {
-    grid-template-columns: 1fr;
-    padding: 1.2rem;
-  }
+  .partner-layout { grid-template-columns: 1fr; padding: 1.2rem; }
   .partner-photo .card-image,
-  .partner-photo img {
-    height: 240px;
-  }
+  .partner-photo img { height: 240px; }
 }
 
-/* ===== Girlfriend page – #FFC9D7 theme only ===== */
+/* ===== Girlfriend page theme ===== */
 .girlfriend-page h2 {
   color: #FFC9D7 !important;
   text-shadow: 0 0 12px #FFC9D7;
@@ -392,27 +312,14 @@ footer p {
   text-shadow: 0 0 10px #FFC9D7;
 }
 
-.girlfriend-page .navbar {
-  border-bottom-color: #FFC9D7 !important;
-}
-
-.girlfriend-page .nav-links a.active {
-  color: #FFC9D7 !important;
-}
+.girlfriend-page .navbar { border-bottom-color: #FFC9D7 !important; }
+.girlfriend-page .nav-links a.active { color: #FFC9D7 !important; }
 
 .girlfriend-page .nav-links a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 2px;
   background: #FFC9D7 !important;
 }
 
-.girlfriend-page .section-desc {
-  color: #FFC9D7 !important;
-}
+.girlfriend-page .section-desc { color: #FFC9D7 !important; }
 
 .girlfriend-page .partner-layout {
   border-color: #FFC9D7 !important;
@@ -430,9 +337,7 @@ footer p {
   text-shadow: 0 0 10px #FFC9D7;
 }
 
-.girlfriend-page .partner-info p {
-  color: #FFC9D7 !important;
-}
+.girlfriend-page .partner-info p { color: #FFC9D7 !important; }
 
 .girlfriend-page footer,
 .girlfriend-page footer p {
@@ -440,11 +345,8 @@ footer p {
   border-top-color: #FFC9D7;
 }
 
-/* Hearts only on girlfriend page nav link */
-.girl-link {
-  position: relative;
-}
-
+/* Nav hearts */
+.girl-link { position: relative; }
 .girl-link .heart {
   position: absolute;
   color: #FFC9D7;
@@ -453,101 +355,73 @@ footer p {
   font-size: 0.7rem;
 }
 
-.girl-link:hover .heart {
-  animation: heartFloat 1.4s ease-out forwards;
-}
-
-.girl-link .h1 { left: -18px; bottom: 100%; font-size: 0.6rem; animation-delay: 0s; }
+.girl-link:hover .heart { animation: heartFloat 1.4s ease-out forwards; }
+.girl-link .h1 { left: -18px; bottom: 100%; font-size: 0.6rem; }
 .girl-link .h2 { left: -6px;  bottom: 100%; font-size: 1.1rem; animation-delay: 0.1s; }
 .girl-link .h3 { right: -8px; bottom: 100%; font-size: 0.8rem; animation-delay: 0.15s; }
 .girl-link .h4 { right: -20px; bottom: 100%; font-size: 1.3rem; animation-delay: 0.25s; }
 .girl-link .h5 { left: 40%; bottom: 100%; font-size: 0.5rem; animation-delay: 0.05s; }
 
-@keyframes heartFloat {
-  0% {
-    opacity: 1;
-    transform: translateY(0) scale(0.5);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-35px) scale(1.2);
-  }
-}
-/* Lots of floating hearts on girlfriend page */
-.girlfriend-page .page-section::before,
-.girlfriend-page .page-section::after {
-  content: "♥";
-  position: absolute;
-  color: #FFC9D7;
-  opacity: 0.18;
-  pointer-events: none;
-  animation: ambientHeart 7s ease-in-out infinite;
-}
-
-.girlfriend-page .page-section::before {
-  font-size: 2.2rem;
-  left: 8%;
-  top: 15%;
-  animation-duration: 8s;
-}
-
-.girlfriend-page .page-section::after {
-  font-size: 1.4rem;
-  right: 10%;
-  bottom: 20%;
-  animation-duration: 6.5s;
-  animation-delay: 1.5s;
-}
-
-.girlfriend-page .partner-layout::before,
-.girlfriend-page .partner-layout::after {
-  content: "♥";
-  position: absolute;
-  color: #FFC9D7;
-  opacity: 0.15;
-  pointer-events: none;
-  animation: ambientHeart 9s ease-in-out infinite;
-}
-
-.girlfriend-page .partner-layout::before {
-  font-size: 1.8rem;
-  left: -30px;
-  top: 30%;
-  animation-delay: 0.5s;
-}
-
-.girlfriend-page .partner-layout::after {
-  font-size: 1.1rem;
-  right: -25px;
-  bottom: 25%;
-  animation-delay: 2s;
-}
-
-@keyframes ambientHeart {
-  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
-  50% { transform: translateY(-25px) rotate(8deg); opacity: 0.3; }
-}
-
-/* Hearts on hover of her name too */
-.layla-name {
-  position: relative;
-  display: inline-block;
-}
-
+/* Name hearts */
+.layla-name { position: relative; display: inline-block; }
 .layla-name .heart {
   position: absolute;
   color: #FFC9D7;
-  opacity: 0;
+  opacity: 0 !important;
   pointer-events: none;
 }
 
-.layla-name:hover .heart {
-  animation: heartFloat 1.5s ease-out forwards;
+.layla-name:hover .heart { animation: heartFloat 1.5s ease-out forwards; opacity: 1; }
+.layla-name .h1 { left: -25px; bottom: 100%; font-size: 0.7rem; }
+.layla-name .h2 { left: -8px;  bottom: 100%; font-size: 1.3rem; animation-delay: 0.07s; }
+.layla-name .h3 { right: -12px; bottom: 100%; font-size: 0.9rem; animation-delay: 0.12s; }
+.layla-name .h4 { right: -28px; bottom: 100%; font-size: 1.5rem; animation-delay: 0.2s; }
+.layla-name .h5 { left: 25%; bottom: 100%; font-size: 0.6rem; animation-delay: 0.03s; }
+.layla-name .h6 { left: 50%; bottom: 100%; font-size: 1.1rem; animation-delay: 0.16s; }
+
+@keyframes heartFloat {
+  0% { opacity: 1; transform: translateY(0) scale(0.4); }
+  100% { opacity: 0; transform: translateY(-40px) scale(1.3); }
 }
 
-.layla-name .h1 { left: -20px; bottom: 100%; font-size: 0.7rem; animation-delay: 0s; }
-.layla-name .h2 { left: -5px;  bottom: 100%; font-size: 1.2rem; animation-delay: 0.08s; }
-.layla-name .h3 { right: -10px; bottom: 100%; font-size: 0.9rem; animation-delay: 0.12s; }
-.layla-name .h4 { right: -25px; bottom: 100%; font-size: 1.4rem; animation-delay: 0.2s; }
-.layla-name .h5 { left: 30%; bottom: 100%; font-size: 0.6rem; animation-delay: 0.03s; }
-.layla-name .h6 { left: 55%; bottom: 100%; font-size: 1rem; animation-delay: 0.18s; }
+/* Floating hearts background */
+.floating-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-hearts span {
+  position: absolute;
+  color: #FFC9D7;
+  opacity: 0.2;
+  animation: floatAround 10s ease-in-out infinite;
+}
+
+.floating-hearts span::before { content: "♥"; }
+
+.floating-hearts span:nth-child(1)  { left: 5%;  top: 15%; font-size: 1.8rem; animation-duration: 8s; }
+.floating-hearts span:nth-child(2)  { left: 12%; top: 60%; font-size: 1.1rem; animation-duration: 11s; animation-delay: 1s; }
+.floating-hearts span:nth-child(3)  { left: 20%; top: 30%; font-size: 2.4rem; animation-duration: 9s; animation-delay: 0.5s; }
+.floating-hearts span:nth-child(4)  { left: 28%; top: 75%; font-size: 0.9rem; animation-duration: 12s; animation-delay: 2s; }
+.floating-hearts span:nth-child(5)  { left: 35%; top: 10%; font-size: 1.5rem; animation-duration: 7s; animation-delay: 1.5s; }
+.floating-hearts span:nth-child(6)  { left: 42%; top: 45%; font-size: 2rem; animation-duration: 10s; animation-delay: 0.3s; }
+.floating-hearts span:nth-child(7)  { left: 50%; top: 80%; font-size: 1.3rem; animation-duration: 9.5s; animation-delay: 2.5s; }
+.floating-hearts span:nth-child(8)  { left: 58%; top: 25%; font-size: 0.8rem; animation-duration: 11.5s; animation-delay: 1.2s; }
+.floating-hearts span:nth-child(9)  { left: 65%; top: 55%; font-size: 2.2rem; animation-duration: 8.5s; animation-delay: 0.8s; }
+.floating-hearts span:nth-child(10) { left: 72%; top: 18%; font-size: 1.4rem; animation-duration: 10.5s; animation-delay: 1.8s; }
+.floating-hearts span:nth-child(11) { left: 78%; top: 70%; font-size: 1rem; animation-duration: 9s; animation-delay: 0.2s; }
+.floating-hearts span:nth-child(12) { left: 85%; top: 40%; font-size: 1.9rem; animation-duration: 12s; animation-delay: 2.2s; }
+.floating-hearts span:nth-child(13) { left: 90%; top: 12%; font-size: 1.2rem; animation-duration: 8s; animation-delay: 1.4s; }
+.floating-hearts span:nth-child(14) { left: 8%;  top: 85%; font-size: 1.6rem; animation-duration: 11s; animation-delay: 0.6s; }
+.floating-hearts span:nth-child(15) { left: 48%; top: 8%;  font-size: 2.6rem; animation-duration: 9.8s; animation-delay: 1.9s; }
+.floating-hearts span:nth-child(16) { left: 62%; top: 88%; font-size: 0.7rem; animation-duration: 10.2s; animation-delay: 2.8s; }
+.floating-hearts span:nth-child(17) { left: 25%; top: 50%; font-size: 1.7rem; animation-duration: 8.7s; animation-delay: 0.4s; }
+.floating-hearts span:nth-child(18) { left: 75%; top: 65%; font-size: 2.1rem; animation-duration: 11.8s; animation-delay: 1.6s; }
+
+@keyframes floatAround {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+  50% { transform: translateY(-35px) rotate(12deg); opacity: 0.35; }
+}
