@@ -362,16 +362,24 @@ footer p { color: var(--cherenkov); }
 .girl-link .h4 { right: -20px; bottom: 100%; font-size: 1.3rem; animation-delay: 0.25s; }
 .girl-link .h5 { left: 40%; bottom: 100%; font-size: 0.5rem; animation-delay: 0.05s; }
 
-/* Name hearts */
-.layla-name { position: relative; display: inline-block; }
+/* Name hearts – fixed */
+.layla-name {
+  position: relative;
+  display: inline-block;
+}
+
 .layla-name .heart {
   position: absolute;
   color: #FFC9D7;
-  opacity: 0 !important;
+  opacity: 0;
   pointer-events: none;
+  font-size: 1rem;
 }
 
-.layla-name:hover .heart { animation: heartFloat 1.5s ease-out forwards; opacity: 1; }
+.layla-name:hover .heart {
+  animation: heartFloat 1.5s ease-out forwards;
+}
+
 .layla-name .h1 { left: -25px; bottom: 100%; font-size: 0.7rem; }
 .layla-name .h2 { left: -8px;  bottom: 100%; font-size: 1.3rem; animation-delay: 0.07s; }
 .layla-name .h3 { right: -12px; bottom: 100%; font-size: 0.9rem; animation-delay: 0.12s; }
