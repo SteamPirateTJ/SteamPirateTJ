@@ -1,4 +1,41 @@
+// =====================================================
+// SITE SECTIONS: turn pages on or off here
+//   true  = shown in the menu and reachable
+//   false = hidden from the menu, visitors get sent home
+// After changing, commit the file and wait a minute.
+// =====================================================
+const SECTIONS = {
+  merch: false,
+  gallery: false,
+  stream: true,
+  allies: true,
+};
+
+// Which file each section uses (don't change these)
+const PAGES = {
+  merch: "merch.html",
+  gallery: "gallery.html",
+  stream: "stream.html",
+  allies: "creators.html",
+};
+
+// Work out which pages are hidden
+const hiddenPages = Object.keys(SECTIONS)
+  .filter(name => !SECTIONS[name])
+  .map(name => PAGES[name]);
+
+// If someone opens a hidden page directly, send them home
+const currentPage = location.pathname.split("/").pop();
+if (hiddenPages.includes(currentPage)) {
+  location.replace("index.html");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Remove hidden pages from the menu
+  hiddenPages.forEach(file => {
+    document.querySelectorAll('.nav-links a[href="' + file + '"]').forEach(a => a.remove());
+  });
+
   // Automatic copyright year
   const yearSpan = document.getElementById("year");
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
