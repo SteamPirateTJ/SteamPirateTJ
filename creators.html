@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Allies and creators SteamPirateTJ likes. Go give them a follow!">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Allies | SteamPirateTJ">
+  <meta property="og:description" content="Allies and creators SteamPirateTJ likes. Go give them a follow!">
+  <meta property="og:image" content="https://steampiratetj.github.io/SteamPirateTJ/banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
   <title>Allies | SteamPirateTJ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +22,8 @@
 
   <nav class="navbar">
     <a href="index.html" class="logo">SteamPirateTJ</a>
-    <div class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
       <a href="merch.html">Merch</a>
       <a href="gallery.html">Art</a>
@@ -29,55 +38,26 @@
 
     <div class="card-grid">
 
-      <!-- Creator 2 - Lady Nemui -->
+      <!-- Lady Nemui -->
       <div class="card creator-card" style="--creator-color: #116C6E;">
         <div class="card-image">
-          <img src="Friends/Lady_Nemui.jpg" alt="Lady Nemui">
+          <img src="Friends/Lady_Nemui.jpg" alt="Lady Nemui" loading="lazy">
         </div>
         <h3>Lady Nemui</h3>
         <p class="creator-desc">A wonderful lass who I view as an older sister. I respect her so you all better too!</p>
         <div class="creator-socials">
-          <a href="https://twitch.tv/ladynemui" target="_blank" title="Twitch"><i class="fab fa-twitch"></i></a>
-          <a href="https://x.com/_aguidingstar_" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://instagram.com/ladynemui" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://tiktok.com/@ladynemui" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://youtube.com/@ladynemui" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://discord.gg/whatever" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-          <a href="https://ko-fi.com/ladynemui" target="_blank" title="Ko-fi"><i class="fas fa-mug-hot"></i></a>
-          <a href="https://vgen.co/ladynemui" target="_blank" title="VGen"><i class="fas fa-palette"></i></a>
-          <a href="https://throne.com/ladynemui" target="_blank" title="Throne"><i class="fas fa-gift"></i></a>
+          <a href="https://twitch.tv/ladynemui" target="_blank" rel="noopener noreferrer" title="Twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+          <a href="https://x.com/_aguidingstar_" target="_blank" rel="noopener noreferrer" title="X" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://instagram.com/ladynemui" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com/@ladynemui" target="_blank" rel="noopener noreferrer" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://youtube.com/@ladynemui" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://ko-fi.com/ladynemui" target="_blank" rel="noopener noreferrer" title="Ko-fi" aria-label="Ko-fi"><i class="fas fa-mug-hot"></i></a>
+          <a href="https://vgen.co/ladynemui" target="_blank" rel="noopener noreferrer" title="VGen" aria-label="VGen"><i class="fas fa-palette"></i></a>
+          <a href="https://throne.com/ladynemui" target="_blank" rel="noopener noreferrer" title="Throne" aria-label="Throne"><i class="fas fa-gift"></i></a>
         </div>
       </div>
 
-      <!-- Creator 3 -->
-      <div class="card creator-card" style="--creator-color: #c084fc;">
-        <div class="card-image placeholder">Creator Avatar</div>
-        <h3>Third Creator</h3>
-        <p class="creator-desc">Artist & streamer</p>
-        <div class="creator-socials">
-          <a href="#" target="_blank" title="Twitch"><i class="fab fa-twitch"></i></a>
-          <a href="#" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-        </div>
-      </div>
-
-      <!-- Creator 4 -->
-      <div class="card creator-card" style="--creator-color: #ff9f1c;">
-        <div class="card-image placeholder">Creator Avatar</div>
-        <h3>Temp</h3>
-        <p class="creator-desc">Temp</p>
-        <div class="creator-socials">
-          <a href="#" target="_blank" title="Twitch"><i class="fab fa-twitch"></i></a>
-          <a href="#" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-        </div>
-      </div>
+      <!-- To add another creator, copy the whole Lady Nemui card above and paste it here, then change the name, description, color, image and links. -->
 
     </div>
   </section>
