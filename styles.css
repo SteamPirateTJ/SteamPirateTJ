@@ -277,21 +277,29 @@ footer p { color: var(--cherenkov); }
   text-shadow: 0 0 14px var(--creator-color, var(--cherenkov));
 }
 
-/* Cherenkov glow pulse for the name */
-@keyframes cherenkov-pulse {
-  0%, 100% {
-    text-shadow: 0 0 10px var(--cherenkov), 0 0 20px var(--cherenkov), 0 0 40px var(--red);
-  }
-  50% {
-    text-shadow: 0 0 20px var(--cherenkov), 0 0 45px var(--cherenkov), 0 0 80px var(--cherenkov), 0 0 100px var(--red);
-  }
+/* Cherenkov glow pulse for the name (smooth on phones) */
+.hero h1 {
+  position: relative;
 }
 
-.hero h1 {
+.hero h1::before {
+  content: '';
+  position: absolute;
+  inset: -40% -15%;
+  background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.45) 0%, rgba(0, 212, 255, 0.15) 40%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
   animation: cherenkov-pulse 3.5s ease-in-out infinite;
+  will-change: opacity;
+}
+
+@keyframes cherenkov-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
 }
 
 /* Turn the animation off for people who have reduced motion enabled */
 @media (prefers-reduced-motion: reduce) {
-  .hero h1 { animation: none; }
+  .hero h1::before { animation: none; opacity: 0.6; }
 }
