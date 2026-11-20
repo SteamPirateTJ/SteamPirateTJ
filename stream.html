@@ -36,24 +36,30 @@
     <h2>Live Stream</h2>
     <p class="section-desc">Watch & chat right here</p>
 
+    <div class="stream-switcher">
+      <button class="stream-arrow" id="stream-prev" aria-label="Previous stream"><i class="fas fa-chevron-left"></i></button>
+      <div class="stream-info">
+        <span class="stream-label">Now showing</span>
+        <span class="stream-name" id="stream-name" aria-live="polite"></span>
+        <div class="stream-dots" id="stream-dots"></div>
+      </div>
+      <button class="stream-arrow" id="stream-next" aria-label="Next stream"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
     <div class="twitch-container">
       <div class="twitch-player">
-        <iframe
-          src="https://player.twitch.tv/?channel=SteamPirateTJ&parent=localhost&parent=steampiratetj.github.io"
-          title="SteamPirateTJ Twitch stream"
-          height="100%"
-          width="100%"
-          allowfullscreen>
-        </iframe>
+        <iframe id="twitch-player" title="Twitch stream" height="100%" width="100%" allowfullscreen></iframe>
       </div>
       <div class="twitch-chat">
-        <iframe
-          src="https://www.twitch.tv/embed/SteamPirateTJ/chat?parent=localhost&parent=steampiratetj.github.io"
-          title="SteamPirateTJ Twitch chat"
-          height="100%"
-          width="100%">
-        </iframe>
+        <iframe id="twitch-chat" title="Twitch chat" height="100%" width="100%"></iframe>
       </div>
+    </div>
+
+    <div class="stream-actions">
+      <a id="stream-link" class="stream-link" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-twitch"></i> <span id="stream-link-text">Watch on Twitch</span>
+      </a>
+      <p class="stream-note">Offline right now? Follow on Twitch to get notified when the pirate goes live.</p>
     </div>
   </section>
 
@@ -63,5 +69,50 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Streams in order. The first one opens first.
+    const CHANNELS = ["CaptnSiege", "SteamPirateTJ"];
+
+    let index = 0;
+    const parent = location.hostname;
+    const player = document.getElementById("twitch-player");
+    const chat = document.getElementById("twitch-chat");
+    const nameEl = document.getElementById("stream-name");
+    const linkEl = document.getElementById("stream-link");
+    const linkText = document.getElementById("stream-link-text");
+    const dotsEl = document.getElementById("stream-dots");
+
+    // Build the dots
+    CHANNELS.forEach((channel, i) => {
+      const dot = document.createElement("button");
+      dot.className = "stream-dot";
+      dot.setAttribute("aria-label", "Show " + channel);
+      dot.addEventListener("click", () => { index = i; render(); });
+      dotsEl.appendChild(dot);
+    });
+
+    function render() {
+      const channel = CHANNELS[index];
+      player.src = "https://player.twitch.tv/?channel=" + channel + "&parent=" + parent;
+      chat.src = "https://www.twitch.tv/embed/" + channel + "/chat?parent=" + parent;
+      nameEl.textContent = channel;
+      linkEl.href = "https://twitch.tv/" + channel;
+      linkText.textContent = "Watch " + channel + " on Twitch";
+      dotsEl.querySelectorAll(".stream-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    document.getElementById("stream-prev").addEventListener("click", () => {
+      index = (index - 1 + CHANNELS.length) % CHANNELS.length;
+      render();
+    });
+    document.getElementById("stream-next").addEventListener("click", () => {
+      index = (index + 1) % CHANNELS.length;
+      render();
+    });
+
+    render();
+  </script>
 </body>
 </html>
