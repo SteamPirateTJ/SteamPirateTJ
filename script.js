@@ -11,12 +11,12 @@ const SECTIONS = {
   allies: true,
 };
 
-// Which file each section uses (don't change these)
+// Which page each section uses (don't change these)
 const PAGES = {
-  merch: "merch.html",
-  gallery: "gallery.html",
-  stream: "stream.html",
-  allies: "creators.html",
+  merch: "merch",
+  gallery: "gallery",
+  stream: "stream",
+  allies: "creators",
 };
 
 // Work out which pages are hidden
@@ -24,16 +24,32 @@ const hiddenPages = Object.keys(SECTIONS)
   .filter(name => !SECTIONS[name])
   .map(name => PAGES[name]);
 
+// Which page is open right now (works with or without ".html")
+const currentPage = location.pathname.split("/").pop().replace(/\.html$/, "");
+
 // If someone opens a hidden page directly, send them home
-const currentPage = location.pathname.split("/").pop();
 if (hiddenPages.includes(currentPage)) {
-  location.replace("index.html");
+  location.replace("./");
+}
+
+// Hide ".html" from the address bar (stream.html shows as /stream)
+if (/\.html$/.test(location.pathname)) {
+  const cleanPath = location.pathname.replace(/index\.html$/, "").replace(/\.html$/, "");
+  history.replaceState(null, "", cleanPath + location.search + location.hash);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   // Remove hidden pages from the menu
-  hiddenPages.forEach(file => {
-    document.querySelectorAll('.nav-links a[href="' + file + '"]').forEach(a => a.remove());
+  hiddenPages.forEach(page => {
+    document.querySelectorAll('.nav-links a[href="' + page + '.html"]').forEach(a => a.remove());
+  });
+
+  // Make every internal link clean (no ".html")
+  document.querySelectorAll("a[href]").forEach(a => {
+    const href = a.getAttribute("href");
+    if (/^[^:#?]+\.html$/.test(href)) {
+      a.setAttribute("href", href === "index.html" ? "./" : href.replace(/\.html$/, ""));
+    }
   });
 
   // Automatic copyright year
