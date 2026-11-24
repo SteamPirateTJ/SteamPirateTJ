@@ -402,6 +402,120 @@ footer p { color: var(--cherenkov); }
   font-size: 0.9rem;
 }
 
+/* Allies page */
+.ally-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ally-card {
+  background: var(--card-bg);
+  border: 2px solid color-mix(in srgb, var(--creator-color) 45%, #222);
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 1.6rem;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.ally-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--creator-color);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--creator-color) 50%, transparent);
+}
+
+.ally-banner {
+  height: 90px;
+  background:
+    radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--creator-color) 70%, transparent), transparent 70%),
+    linear-gradient(135deg, color-mix(in srgb, var(--creator-color) 40%, #111), #111);
+}
+
+.ally-avatar {
+  width: 130px;
+  height: 130px;
+  margin: -65px auto 0.8rem;
+  border-radius: 50%;
+  border: 4px solid var(--creator-color);
+  background: #222;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pirata One', cursive;
+  font-size: 3rem;
+  color: var(--creator-color);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--creator-color) 60%, transparent);
+  position: relative;
+}
+
+.ally-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ally-card h3 {
+  font-family: 'Pirata One', cursive;
+  font-weight: normal;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  color: var(--creator-color);
+  padding: 0 1rem;
+}
+
+.ally-role {
+  display: inline-block;
+  margin: 0.3rem 0 0.2rem;
+  padding: 0.15rem 0.8rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ddd;
+  border: 1px solid color-mix(in srgb, var(--creator-color) 60%, transparent);
+  border-radius: 999px;
+}
+
+.ally-desc {
+  color: #bbb;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.4rem 1.2rem;
+  min-height: 3.5em;
+}
+
+.ally-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0 1.2rem;
+}
+
+.ally-links a {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #262626;
+  color: var(--text);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.ally-links a:hover {
+  background: var(--creator-color);
+  color: #000;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 0 14px var(--creator-color);
+}
+
 @media (max-width: 768px) {
   .stream-info { min-width: 150px; }
   .stream-name { font-size: 1.5rem; }
