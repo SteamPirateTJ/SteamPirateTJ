@@ -36,30 +36,8 @@
     <h2>Allies & Creators I Like</h2>
     <p class="section-desc">Fellow Scallywags That I Care About</p>
 
-    <div class="card-grid">
-
-      <!-- Lady Nemui -->
-      <div class="card creator-card" style="--creator-color: #116C6E;">
-        <div class="card-image">
-          <img src="Friends/Lady_Nemui.jpg" alt="Lady Nemui" loading="lazy">
-        </div>
-        <h3>Lady Nemui</h3>
-        <p class="creator-desc">A wonderful lass who I view as an older sister. I respect her so you all better too!</p>
-        <div class="creator-socials">
-          <a href="https://twitch.tv/ladynemui" target="_blank" rel="noopener noreferrer" title="Twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
-          <a href="https://x.com/_aguidingstar_" target="_blank" rel="noopener noreferrer" title="X" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://instagram.com/ladynemui" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://tiktok.com/@ladynemui" target="_blank" rel="noopener noreferrer" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://youtube.com/@ladynemui" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://ko-fi.com/ladynemui" target="_blank" rel="noopener noreferrer" title="Ko-fi" aria-label="Ko-fi"><i class="fas fa-mug-hot"></i></a>
-          <a href="https://vgen.co/ladynemui" target="_blank" rel="noopener noreferrer" title="VGen" aria-label="VGen"><i class="fas fa-palette"></i></a>
-          <a href="https://throne.com/ladynemui" target="_blank" rel="noopener noreferrer" title="Throne" aria-label="Throne"><i class="fas fa-gift"></i></a>
-        </div>
-      </div>
-
-      <!-- To add another creator, copy the whole Lady Nemui card above and paste it here, then change the name, description, color, image and links. -->
-
-    </div>
+    <div class="ally-grid" id="ally-grid"></div>
+    <noscript><p class="section-desc">Turn on JavaScript to see my allies.</p></noscript>
   </section>
 
   <footer>
@@ -68,5 +46,117 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // =====================================================
+    // ADD OR EDIT ALLIES HERE
+    // To add someone: copy one whole { ... }, block, paste it
+    // below the last one, and change the details.
+    // Leave a link out (or delete the line) if they don't have it.
+    // Link names you can use: twitch, x, instagram, tiktok,
+    // youtube, discord, kofi, vgen, throne, website
+    // =====================================================
+    const ALLIES = [
+      {
+        name: "Lady Nemui",
+        role: "",                       // e.g. "Streamer", "Artist" (optional)
+        color: "#116C6E",               // their glow color
+        image: "Friends/Lady_Nemui.jpg",
+        desc: "A wonderful lass who I view as an older sister. I respect her so you all better too!",
+        links: {
+          twitch: "https://twitch.tv/ladynemui",
+          x: "https://x.com/_aguidingstar_",
+          instagram: "https://instagram.com/ladynemui",
+          tiktok: "https://tiktok.com/@ladynemui",
+          youtube: "https://youtube.com/@ladynemui",
+          kofi: "https://ko-fi.com/ladynemui",
+          vgen: "https://vgen.co/ladynemui",
+          throne: "https://throne.com/ladynemui"
+        }
+      },
+
+      // Example of how to add the next ally (remove the // on each line to use it):
+      // {
+      //   name: "Name Here",
+      //   role: "Streamer",
+      //   color: "#c084fc",
+      //   image: "Friends/Name_Here.jpg",
+      //   desc: "A line about them.",
+      //   links: { twitch: "https://twitch.tv/theirname" }
+      // },
+    ];
+
+    // Icons for each link type (don't change)
+    const ICONS = {
+      twitch:    { icon: "fab fa-twitch",      label: "Twitch" },
+      x:         { icon: "fab fa-x-twitter",   label: "X" },
+      instagram: { icon: "fab fa-instagram",   label: "Instagram" },
+      tiktok:    { icon: "fab fa-tiktok",      label: "TikTok" },
+      youtube:   { icon: "fab fa-youtube",     label: "YouTube" },
+      discord:   { icon: "fab fa-discord",     label: "Discord" },
+      kofi:      { icon: "fas fa-mug-hot",     label: "Ko-fi" },
+      vgen:      { icon: "fas fa-palette",     label: "VGen" },
+      throne:    { icon: "fas fa-gift",        label: "Throne" },
+      website:   { icon: "fas fa-globe",       label: "Website" }
+    };
+
+    const grid = document.getElementById("ally-grid");
+
+    ALLIES.forEach(ally => {
+      const card = document.createElement("article");
+      card.className = "ally-card";
+      card.style.setProperty("--creator-color", ally.color || "#00d4ff");
+
+      const banner = document.createElement("div");
+      banner.className = "ally-banner";
+      card.appendChild(banner);
+
+      const avatar = document.createElement("div");
+      avatar.className = "ally-avatar";
+      if (ally.image) {
+        const img = document.createElement("img");
+        img.src = ally.image;
+        img.alt = ally.name;
+        img.loading = "lazy";
+        avatar.appendChild(img);
+      } else {
+        avatar.textContent = ally.name.charAt(0).toUpperCase();
+      }
+      card.appendChild(avatar);
+
+      const name = document.createElement("h3");
+      name.textContent = ally.name;
+      card.appendChild(name);
+
+      if (ally.role) {
+        const role = document.createElement("span");
+        role.className = "ally-role";
+        role.textContent = ally.role;
+        card.appendChild(role);
+      }
+
+      const desc = document.createElement("p");
+      desc.className = "ally-desc";
+      desc.textContent = ally.desc || "";
+      card.appendChild(desc);
+
+      const links = document.createElement("div");
+      links.className = "ally-links";
+      Object.keys(ally.links || {}).forEach(type => {
+        const info = ICONS[type];
+        if (!info) return;
+        const a = document.createElement("a");
+        a.href = ally.links[type];
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.title = info.label;
+        a.setAttribute("aria-label", ally.name + " on " + info.label);
+        a.innerHTML = '<i class="' + info.icon + '"></i>';
+        links.appendChild(a);
+      });
+      card.appendChild(links);
+
+      grid.appendChild(card);
+    });
+  </script>
 </body>
 </html>
