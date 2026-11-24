@@ -355,7 +355,10 @@ footer p { color: var(--cherenkov); }
 
 .stream-dots {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.6rem;
+  max-width: 180px;
   margin-top: 0.4rem;
 }
 
