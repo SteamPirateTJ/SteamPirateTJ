@@ -408,13 +408,14 @@ footer p { color: var(--cherenkov); }
 /* Allies page */
 .ally-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 2.5rem;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .ally-card {
+  min-width: 0;
   background: var(--card-bg);
   border: 2px solid color-mix(in srgb, var(--creator-color) 45%, #222);
   border-radius: 14px;
@@ -469,6 +470,7 @@ footer p { color: var(--cherenkov); }
   letter-spacing: 1px;
   color: var(--creator-color);
   padding: 0 1rem;
+  overflow-wrap: anywhere;
 }
 
 .ally-role {
@@ -488,6 +490,7 @@ footer p { color: var(--cherenkov); }
   font-size: 0.95rem;
   padding: 0.6rem 1.4rem 1.2rem;
   min-height: 3.5em;
+  overflow-wrap: anywhere;
 }
 
 .ally-links {
@@ -507,19 +510,3 @@ footer p { color: var(--cherenkov); }
   border-radius: 50%;
   background: #262626;
   color: var(--text);
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.ally-links a:hover {
-  background: var(--creator-color);
-  color: #000;
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 0 14px var(--creator-color);
-}
-
-@media (max-width: 768px) {
-  .stream-info { min-width: 150px; }
-  .stream-name { font-size: 1.5rem; }
-}
