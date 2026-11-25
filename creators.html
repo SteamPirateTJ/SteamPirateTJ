@@ -37,6 +37,12 @@
     <p class="section-desc">Fellow Scallywags That I Care About</p>
 
     <div class="ally-grid" id="ally-grid"></div>
+
+    <div class="ally-nav" id="ally-nav">
+      <button class="ally-arrow" id="ally-prev" aria-label="Previous ally"><i class="fas fa-chevron-left"></i></button>
+      <div class="ally-dots" id="ally-dots"></div>
+      <button class="ally-arrow" id="ally-next" aria-label="Next ally"><i class="fas fa-chevron-right"></i></button>
+    </div>
     <noscript><p class="section-desc">Turn on JavaScript to see my allies.</p></noscript>
   </section>
 
@@ -181,6 +187,68 @@
 
       grid.appendChild(card);
     });
+
+    // =====================================================
+    // Slider arrows and dots (only visible on phones)
+    // =====================================================
+    const cards = Array.from(grid.children);
+    const dotsEl = document.getElementById("ally-dots");
+    const navEl = document.getElementById("ally-nav");
+
+    if (cards.length < 2) {
+      navEl.style.display = "none";
+    }
+
+    cards.forEach((card, i) => {
+      const dot = document.createElement("button");
+      dot.className = "ally-dot";
+      dot.setAttribute("aria-label", "Show " + ALLIES[i].name);
+      dot.addEventListener("click", () => goTo(i));
+      dotsEl.appendChild(dot);
+    });
+
+    function currentIndex() {
+      const center = grid.scrollLeft + grid.clientWidth / 2;
+      let best = 0;
+      let bestDist = Infinity;
+      cards.forEach((card, i) => {
+        const dist = Math.abs(card.offsetLeft + card.offsetWidth / 2 - center);
+        if (dist < bestDist) { best = i; bestDist = dist; }
+      });
+      return best;
+    }
+
+    function goTo(i) {
+      const card = cards[i];
+      grid.scrollTo({
+        left: card.offsetLeft - (grid.clientWidth - card.offsetWidth) / 2,
+        behavior: "smooth"
+      });
+    }
+
+    function updateDots() {
+      const now = currentIndex();
+      dotsEl.querySelectorAll(".ally-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === now);
+      });
+    }
+
+    document.getElementById("ally-prev").addEventListener("click", () => {
+      goTo((currentIndex() - 1 + cards.length) % cards.length);
+    });
+    document.getElementById("ally-next").addEventListener("click", () => {
+      goTo((currentIndex() + 1) % cards.length);
+    });
+
+    let ticking = false;
+    grid.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => { updateDots(); ticking = false; });
+        ticking = true;
+      }
+    });
+    window.addEventListener("resize", updateDots);
+    updateDots();
   </script>
 </body>
 </html>
